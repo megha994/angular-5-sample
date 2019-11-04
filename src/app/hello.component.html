@@ -1,0 +1,36 @@
+<section>
+	<div [ngStyle]="{color: 'darkblue', marginLeft:'150px',  marginRight:'100px'}">
+		<h1>My Profile</h1>
+	</div>
+
+	<form [formGroup]="personalInfo" (ngSubmit)="onSubmit()">
+		<p>
+			<label>First Name: </label>
+			<input formControlName="firstName" type="text"> <br/><br/>
+			<label>Last Name: </label>
+			<input formControlName="lastName" type="text"><br/><br/>
+			<label>Age: </label>
+			<input formControlName="age" type="text"><br/><br/>
+			<label>Date of Birth: </label><br/>
+			<label>day: </label>
+			<select formControlName="day">
+        <option *ngFor="let d of day" [ngValue]="d">
+{{d}}
+        </option>
+      </select>&nbsp;
+			<label>month: </label>
+			<select formControlName="month">
+        <option *ngFor="let m of month" [ngValue]="m">
+{{m}}
+        </option>
+      </select>&nbsp;
+			<label>year: </label>
+			<select formControlName="year">
+        <option *ngFor="let m of year" [ngValue]="m">
+{{m}}
+        </option>
+      </select>&nbsp;
+		</p>
+	</form>
+
+</section>
